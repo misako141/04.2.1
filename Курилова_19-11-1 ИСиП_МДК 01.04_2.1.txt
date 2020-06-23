@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+struct Toch
+{
+	string id;
+	int x;
+	int y;
+}
+;
+struct Kvadrat1
+{
+	int st;
+	string name;
+	Toch kv1;
+	Toch kv2;
+	Toch kv3;
+	Toch kv4;
+}
+;
+struct Kvadrat2
+{
+	int st;
+	string name;
+	Toch kv21;
+	Toch kv22;
+	Toch kv23;
+	Toch kv24;
+}
+;
+struct Kvadrat3
+{
+	int st;
+	string name;
+	Toch kv31;
+	Toch kv32;
+	Toch kv33;
+	Toch kv34;
+}
+;
+void Vivod(Kvadrat1 a1, Kvadrat2 a2, Kvadrat3 a3)
+{
+	int p1, p2, p3;
+	cout << "Name: " << a1.name << endl;
+	p1 = a1.st * 4; //Первый периметр
+	cout << "P = " << 4 * a1.st << endl;
+	cout << "S = " << a1.st * a1.st << endl;
+	cout << "Name: " << a2.name << endl;
+	p2 = a2.st * 4; //Второй периметр
+	cout << "P = " << 4 * a2.st << endl;
+	cout << "S = " << a2.st * a2.st << endl;
+	cout << "Name: " << a3.name << endl;
+	p3 = a3.st * 4; //Третий периметр
+	cout << "P = " << 4 * a3.st << endl;
+	cout << "S = " << a3.st * a3.st << endl;
+	if (a1.st == a2.st == a3.st) cout << "Kvadrati ravni" << endl;
+	else cout << "Kvadrati ne ravni" << endl;
+	cout << "Summa perimetrov 3 kvadratov = " << p1 + p2 + p3 << endl; //Сумма периметров
+}
+int main()
+{
+	Toch k1 = { "first point",0,0 };
+	Toch k2 = { "second point",0,2 };
+	Toch k3 = { "third point",2,2 };
+	Toch k4 = { "fourth point",2,0 };
+	Kvadrat1 vivod1 = { 2,"First Squad", k1,k2,k3,k4 };
+
+	Toch f1 = { "first point",0,0 };
+	Toch f2 = { "second point",-2,0 };
+	Toch f3 = { "third point",-2,-2 };
+	Toch f4 = { "fourth point",0,-2 };
+	Kvadrat2 vivod2 = { 2,"Second Squad",f1,f2,f3,f4 };
+
+	Toch c1 = { "first point",2,4 };
+	Toch c2 = { "second point",2,2 };
+	Toch c3 = { "third point",4,4 };
+	Toch c4 = { "fourth point",4,2 };
+	Kvadrat3 vivod3 = { 2,"Third Squad",c1,c2,c3,c4 };
+	Vivod(vivod1, vivod2, vivod3);
+}
